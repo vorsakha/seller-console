@@ -115,16 +115,16 @@ export default function LeadDetail({
             </h3>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <span className="block text-sm font-medium text-gray-700 mb-1">
                   Name
-                </label>
+                </span>
                 <p className="text-sm text-gray-900">{lead!.name}</p>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <span className="block text-sm font-medium text-gray-700 mb-1">
                   Company
-                </label>
+                </span>
                 <p className="text-sm text-gray-900">{lead!.company}</p>
               </div>
 
@@ -138,18 +138,18 @@ export default function LeadDetail({
               />
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <span className="block text-sm font-medium text-gray-700 mb-1">
                   Source
-                </label>
+                </span>
                 <p className="text-sm text-gray-900 capitalize">
                   {lead!.source.replace("_", " ")}
                 </p>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <span className="block text-sm font-medium text-gray-700 mb-1">
                   Score
-                </label>
+                </span>
                 <p className="text-sm font-semibold text-blue-600">
                   {lead!.score}
                 </p>

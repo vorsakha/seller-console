@@ -76,13 +76,27 @@ export default function SlidePanel({
   if (!shouldRender) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
+    <div
+      className="fixed inset-0 z-50 overflow-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="slide-panel-title"
+    >
       <div className="absolute inset-0 overflow-hidden">
         <div
           className={`absolute inset-0 bg-gray-500/50 transition-opacity duration-300 ${
             renderOpen ? "opacity-75" : "opacity-0"
           }`}
           onClick={onClose}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onClose();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Close panel"
         />
 
         <div className="fixed inset-y-0 right-0 flex max-w-full pl-10">
@@ -93,11 +107,17 @@ export default function SlidePanel({
           >
             <div className="flex h-full flex-col bg-white shadow-xl">
               <div className="flex items-center justify-between px-4 py-6 sm:px-6 border-b border-gray-200">
-                <h2 className="text-lg font-medium text-gray-900">{title}</h2>
+                <h2
+                  id="slide-panel-title"
+                  className="text-lg font-medium text-gray-900"
+                >
+                  {title}
+                </h2>
                 <button
                   type="button"
                   className="rounded-md bg-white cursor-pointer text-gray-600 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={onClose}
+                  aria-label="Close dialog"
                 >
                   Close
                 </button>

@@ -54,14 +54,28 @@ export default function Select({
           {label}
         </label>
       )}
-      <select id={id} className={classNames} {...props}>
+      <select
+        id={id}
+        className={classNames}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${id}-error` : undefined}
+        {...props}
+      >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
           </option>
         ))}
       </select>
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+      {error && (
+        <p
+          id={`${id}-error`}
+          className="mt-1 text-sm text-red-600"
+          role="alert"
+        >
+          {error}
+        </p>
+      )}
       {helperText && !error && (
         <p className="mt-1 text-sm text-gray-500">{helperText}</p>
       )}

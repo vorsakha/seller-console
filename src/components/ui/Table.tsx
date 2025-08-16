@@ -83,10 +83,24 @@ function SortableHeader({
   const isAsc = isActive && currentSort?.direction === "asc";
   const isDesc = isActive && currentSort?.direction === "desc";
 
+  const getSortDirection = () => {
+    if (!isActive) return "none";
+    return currentSort?.direction === "asc" ? "ascending" : "descending";
+  };
+
   return (
     <th
       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors select-none"
       onClick={handleClick}
+      scope="col"
+      aria-sort={getSortDirection()}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
     >
       <div className="flex items-center justify-between group">
         <span>{children}</span>
@@ -139,6 +153,7 @@ function StaticHeader({
       className={`px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ${
         className || ""
       }`}
+      scope="col"
     >
       {children}
     </th>
@@ -166,7 +181,11 @@ export default function Table<T>({
   return (
     <div className="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
       <div className="max-h-96 overflow-auto">
-        <table className="min-w-full divide-y divide-gray-200">
+        <table
+          className="min-w-full divide-y divide-gray-200"
+          role="table"
+          aria-label="Data table"
+        >
           <thead className="bg-gray-50">
             <tr>
               {columns.map((column) =>

@@ -46,8 +46,22 @@ export default function Input({
           {label}
         </label>
       )}
-      <input id={id} className={classNames} {...props} />
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+      <input
+        id={id}
+        className={classNames}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${id}-error` : undefined}
+        {...props}
+      />
+      {error && (
+        <p
+          id={`${id}-error`}
+          className="mt-1 text-sm text-red-600"
+          role="alert"
+        >
+          {error}
+        </p>
+      )}
       {helperText && !error && (
         <p className="mt-1 text-sm text-gray-500">{helperText}</p>
       )}
