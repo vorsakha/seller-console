@@ -115,7 +115,7 @@ export default function SlidePanel({
                 </h2>
                 <button
                   type="button"
-                  className="rounded-md bg-white cursor-pointer text-gray-600 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="rounded-md bg-white cursor-pointer text-gray-600 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   onClick={onClose}
                   aria-label="Close dialog"
                 >

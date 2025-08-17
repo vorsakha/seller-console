@@ -13,7 +13,7 @@ function getStageColor(stage: Opportunity["stage"]) {
     case "prospect":
       return "bg-gray-100 text-gray-800";
     case "proposal":
-      return "bg-blue-100 text-blue-800";
+      return "bg-indigo-100 text-indigo-800";
     case "negotiation":
       return "bg-yellow-100 text-yellow-800";
     case "closed-won":

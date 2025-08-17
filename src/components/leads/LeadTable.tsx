@@ -13,7 +13,7 @@ interface LeadTableProps {
 function getStatusColor(status: Lead["status"]) {
   switch (status) {
     case "new":
-      return "bg-blue-100 text-blue-800";
+      return "bg-indigo-100 text-indigo-800";
     case "contacted":
       return "bg-yellow-100 text-yellow-800";
     case "qualified":

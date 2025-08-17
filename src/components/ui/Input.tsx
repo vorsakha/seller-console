@@ -31,7 +31,7 @@ export default function Input({
     ${
       error
         ? "ring-red-300 focus:ring-red-600"
-        : "ring-gray-300 focus:ring-blue-600"
+        : "ring-gray-300 focus:ring-indigo-600"
     }
     ${className}
   `;

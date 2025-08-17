@@ -133,7 +133,7 @@ export default function ConvertDialog({
                 <span className="text-sm font-medium text-gray-500">
                   Score:
                 </span>
-                <span className="text-sm font-semibold text-blue-600">
+                <span className="text-sm font-semibold text-indigo-600">
                   {lead!.score}
                 </span>
               </div>

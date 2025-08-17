@@ -33,7 +33,7 @@ function LoadingState() {
   return (
     <div className="bg-white shadow-sm rounded-lg border border-gray-200">
       <div className="p-8 text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600 mx-auto"></div>
         <p className="mt-2 text-gray-500">Loading...</p>
       </div>
     </div>
@@ -108,7 +108,7 @@ function SortableHeader({
           <svg
             className={`w-3 h-3 ${
               isAsc
-                ? "text-blue-600"
+                ? "text-indigo-600"
                 : "text-gray-300 group-hover:text-gray-400"
             }`}
             fill="currentColor"
@@ -123,7 +123,7 @@ function SortableHeader({
           <svg
             className={`w-3 h-3 ${
               isDesc
-                ? "text-blue-600"
+                ? "text-indigo-600"
                 : "text-gray-300 group-hover:text-gray-400"
             }`}
             fill="currentColor"

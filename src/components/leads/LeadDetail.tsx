@@ -150,7 +150,7 @@ export default function LeadDetail({
                 <span className="block text-sm font-medium text-gray-700 mb-1">
                   Score
                 </span>
-                <p className="text-sm font-semibold text-blue-600">
+                <p className="text-sm font-semibold text-indigo-600">
                   {lead!.score}
                 </p>
               </div>
