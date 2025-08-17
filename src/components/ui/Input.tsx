@@ -27,7 +27,7 @@ export default function Input({
 }: InputProps) {
   const classNames = `
     block w-full rounded-md border-0 py-1.5 min-h-[37px] px-3 text-gray-900 shadow-sm ring-1 ring-inset
-    placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6
+    placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-none sm:text-sm sm:leading-6
     ${
       error
         ? "ring-red-300 focus:ring-red-600"
