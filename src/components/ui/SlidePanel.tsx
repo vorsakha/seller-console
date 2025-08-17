@@ -80,7 +80,7 @@ export default function SlidePanel({
       className="fixed inset-0 z-50 overflow-hidden"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="slide-panel-title"
+      aria-labelledby={title}
     >
       <div className="absolute inset-0 overflow-hidden">
         <div
@@ -107,10 +107,7 @@ export default function SlidePanel({
           >
             <div className="flex h-full flex-col bg-white shadow-xl">
               <div className="flex items-center justify-between px-4 py-6 sm:px-6 border-b border-gray-200">
-                <h2
-                  id="slide-panel-title"
-                  className="text-lg font-medium text-gray-900"
-                >
+                <h2 id={title} className="text-lg font-medium text-gray-900">
                   {title}
                 </h2>
                 <button
