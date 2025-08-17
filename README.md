@@ -11,7 +11,7 @@ Goal: Build a lightweight console to triage Leads and convert them into Opportun
 
 ## Tech Stack
 
-- React 18 + TypeScript
+- React + TypeScript
 - Tailwind CSS
 - Vite (build tool)
 - Local state management with Context API
